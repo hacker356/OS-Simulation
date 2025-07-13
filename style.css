@@ -1,0 +1,158 @@
+body {
+  font-family: 'Helvetica', sans-serif;
+  margin: 20px;
+  color: #333;
+  background: #f5f6fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #ff7675;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tab {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.tab li {
+  padding: 10px 20px;
+  background: #fdcb6e;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+}
+
+.tab li.active, .tab li:hover {
+  background: #ff7675;
+  color: #ffffff;
+}
+
+.tab-content {
+  display: none;
+  max-width: 700px;
+  width: 100%;
+  padding: 15px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+input, select, button {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background: #0984e3;
+  color: #fff;
+  border: none;
+}
+
+button:hover {
+  background: #74b9ff;
+}
+
+.gantt-wrapper {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  padding: 10px;
+  background: #edf2f7;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+.gantt-item {
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.gantt-item:hover {
+  transform: translateY(-5px);
+}
+
+.gantt-item .time-range {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.85em;
+  color: #e2e2e2;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  box-shadow: 0 0 10px #0003;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #dcdde1;
+}
+
+th {
+  background: #0984e3;
+  color: #ffffff;
+}
+
+tr:hover {
+  background: #dff9fb;
+}
+
+tfoot td {
+  font-weight: bold;
+  background: #74b9ff;
+  color: #ffffff;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .tab li {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  input, select, button {
+    max-width: 100%;
+  }
+
+  .gantt-item {
+    padding: 5px 10px;
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .gantt-item {
+    padding: 3px 8px;
+    font-size: 0.75em;
+  }
+}

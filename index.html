@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OS Simulator</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>OS Simulator</h1>
+
+<ul class="tab">
+  <li data-target="#cpu" class="active">CPU Scheduling</li>
+  <li data-target="#disk">Disk Scheduling</li>
+  <li data-target="#page">Page Replacement</li>
+</ul>
+
+<div id="cpu" class="tab-content active">
+<h2>CPU Scheduling</h2>
+<select id="cpuAlgorithm">
+  <option value="fcfs">First Come First Serve (FCFS)</option>
+  <option value="sjf">Shortest Job First (SJF)</option>
+  <option value="srtf">Shortest Remaining Time First (SRTF)</option>
+  <option value="rr">Round Robin</option>
+  <option value="priority">Priority</option>
+</select>
+
+<input id="processes" placeholder="Process IDs (comma-separated)" />
+<input id="arrivals" placeholder="Arrival Times (comma-separated)" />
+<input id="bursts" placeholder="Burst Times (comma-separated)" />
+<input id="priorities" placeholder="Priority (comma-separated)" />
+<input id="quantum" placeholder="Quantum (For Round Robin)" />
+
+<button onclick="simulateCPU()">Simulate CPU</button>
+
+<h3>Gantt Chart</h3>
+<div id="ganttChart" class="gantt-wrapper"></div>
+
+<h3>Table</h3>
+<div id="cpuTable"></div>
+
+<h4>Averages</h4>
+<div id="cpuAverages"></div>
+</div>
+
+<div id="disk" class="tab-content">
+<h2>Disk Scheduling</h2>
+<select id="diskAlgorithm">
+  <option value="fcfs">First Come First Served (FCFS)</option>
+  <option value="sstf">Shortest Seek Time First (SSTF)</option>
+  <option value="scan">SCAN</option>
+  <option value="cscan">C-SCAN</option>
+  <option value="look">LOOK</option>
+  <option value="clook">C-LOOK</option>
+</select>
+
+<input id="diskInput" placeholder="Disk requests (comma-separated)" />
+<input id="headPosition" placeholder="Current head position" />
+
+<button onclick="simulateDisk()">Simulate Disk</button>
+
+<h4>Total Seek</h4>
+<div id="diskOutput"></div>
+</div>
+
+<div id="page" class="tab-content">
+<h2>Page Replacement</h2>
+<select id="pageAlgorithm">
+  <option value="fifo">FIFO</option>
+  <option value="optimal">Optimal</option>
+  <option value="lru">LRU</option>
+  <option value="mru">MRU</option>
+</select>
+
+<input id="pageInput" placeholder="Page Reference String (comma-separated)" />
+<input id="frameCount" placeholder="# of frames" />
+
+<button onclick="simulatePage()">Simulate Page</button>
+
+<h4>Page Replacement</h4>
+<div id="pageOutput"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
